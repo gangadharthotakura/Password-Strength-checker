@@ -1,0 +1,39 @@
+<section class="container">
+  <h2 class="title">Password Strength Meter for Angular v18</h2>
+  <div class="input-field">
+    <input
+      type="text"
+      [(ngModel)]="text"
+      placeholder="Type here to see the progress"
+    />
+    <password-strength-meter
+      [password]="text"
+      enableFeedback
+      (strengthChange)="onPasswordStrengthChange($event)"
+    />
+
+    <p>Score: {{ score }}</p>
+  </div>
+
+  <div class="sub-section">
+    <h2 class="title">Other examples</h2>
+    <nav>
+      <a
+        class="button"
+        routerLink="/custom-service"
+        routerLinkActive="button--active"
+        >Custom Service</a
+      >
+      <a
+        class="button"
+        routerLink="/with-module"
+        routerLinkActive="button--active"
+        >Using with a module</a
+      >
+    </nav>
+  </div>
+
+  <div class="sub-pages">
+    <router-outlet></router-outlet>
+  </div>
+</section>
